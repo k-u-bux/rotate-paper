@@ -7,14 +7,9 @@ URL
 
 ### Prerequisites
 
-- Nix package manager
+You will need the nix package manager. 
 
-### Setup
-
-   ```bash
-   git clone https://github.com/kubux/rotate-paper.git
-   cd rotate-paper
-   ```
+Clone the repository and change-directory into it.
 
 ### Install the dependencies
 
