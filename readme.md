@@ -7,7 +7,7 @@ URL
 
 ### Prerequisites
 
-- Nix package manager (recommended) - Provides Node.js and all dependencies automatically
+- Nix package manager
 
 ### Setup
 
