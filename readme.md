@@ -18,3 +18,7 @@ Now, do:
    ```
    
 This will make all measurements on your local machine and create the paper with figures showing those measurements. Beware: this may take days.
+
+
+** Version history
+[v1] Fri, 2 Jan 2026 20:12:57 UTC (138 KB) commit: 9fda1cfeaa53b2dd95068f62a0b5b3ec6cbc4068
