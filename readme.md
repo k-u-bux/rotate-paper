@@ -1,7 +1,8 @@
 # Rotate-Paper
 
 This repository contains the sources for the paper
-URL
+[Valentin Blomer, Kai-Uwe Bux: The cost of cyclic permutations and remainder sums in the Euclidean algorithm](http://arxiv.org/abs/2601.00979)
+
 
 ## Running the measurements
 
