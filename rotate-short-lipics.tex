@@ -1299,6 +1299,12 @@ pdfsubject={LIPIcs, Vol.\@SeriesVolume, \@EventShortTitle; Copyright (C) \ifx\au
       \textbf{please check:} #1
     \end{color}
   }
+
+  \newenvironment{reworded}{%
+    \begin{color}{dkred}%
+    }{%
+    \end{color}%
+  }
   
   % \newcommand{\changevb}[2][]{\begin{color}{red}\sout{#1}\end{color}\begin{color}{red}#2\end{color}}
   % \newcommand{\change}[2][]{\begin{color}{red}\sout{#1}\end{color}\begin{color}{blue}#2\end{color}}
@@ -1545,26 +1551,37 @@ pdfsubject={LIPIcs, Vol.\@SeriesVolume, \@EventShortTitle; Copyright (C) \ifx\au
   shown that this number is optimal: any rotation algorithm will make at
   least that many moves.
 
-  Despite being optimal, the Dolphin algorithm is slow on modern
-  machines especially for large values of $\Size$. The algorithm
-  accesses memory very much out of order. For very large arrays, it
-  approaches the point where every memory access is a cache miss. This
-  motivates the search for rotation algorithms with better memory
-  locality. Two such schemes have been discussed by
-  Gries--Mills~\cite{GriesMills81}:
-  % , predating the need of memory
-  %locality:
-  % we should not make it sound as though Gries and Mills were motivated by
-  % the quirks of modern machines and memory locallity. Back in their day,
-  % the dolphin algorithm was just fine (although not faster than the 3n
-  % methods).
-  one may implement a rotation as a
+  Alongside the Dolphin algorithm, Griess--Mills~\cite{GriesMills81}
+  discuss two alternative schemes: one may implement a rotation as a
   composition of three reversals, or one can employ a recursive strategy
   swapping segments of identical lengths at each step. The reversal
   scheme uses $\Size-O(1)$ swaps and the recursive block swapping
   strategy needs $\Size-\gcd(\Size,\Shift)$ swaps. Thus, both algorithms
   need on the order of $3\Size$ moves, in the latter case at least for
-  ``typical'' $k$.
+  ``typical'' $k$. Despite using more moves, both alternatives are better
+  suited to modern machines due to superior memory access patterns vastly
+  reducing cache misses.
+  
+%  Despite being optimal, the Dolphin algorithm is slow on modern
+%  machines especially for large values of $\Size$. The algorithm
+%  accesses memory very much out of order. For very large arrays, it
+%  approaches the point where every memory access is a cache miss. This
+%  motivates the search for rotation algorithms with better memory
+%  locality. Two such schemes have been discussed by
+%  Gries--Mills~\cite{GriesMills81}:
+%  % , predating the need of memory
+%  %locality:
+%  % we should not make it sound as though Gries and Mills were motivated by
+%  % the quirks of modern machines and memory locallity. Back in their day,
+%  % the dolphin algorithm was just fine (although not faster than the 3n
+%  % methods).
+%  one may implement a rotation as a
+%  composition of three reversals, or one can employ a recursive strategy
+%  swapping segments of identical lengths at each step. The reversal
+%  scheme uses $\Size-O(1)$ swaps and the recursive block swapping
+%  strategy needs $\Size-\gcd(\Size,\Shift)$ swaps. Thus, both algorithms
+%  need on the order of $3\Size$ moves, in the latter case at least for
+%  ``typical'' $k$.
 
   Van~den~Hoven \cite{VanDenHoven21}   observed that some of the
   transpositions during a triple reversal can be rearranged into
@@ -5072,7 +5089,7 @@ we have
 %  \end{remark}
 
   \section{Asymptotic costs of the block cycle scheme}\label{sec.restglied}
-  Lemma~\ref{lemma.moves} relates the move count to the sum remainders
+  Lemma~\ref{lemma.moves} relates the move count to the sum of remainders
   in the Euclidean algorithm. Consequently, 
   we can analyze the average cost of the algorithm (measured in number
   of moves) using  analytic number theory. 
@@ -6522,7 +6539,7 @@ $ is subject to $\RightA < \frac{\Size}{\TheDivisor^2\LeftA} - \LeftA$ and  $\Sm
   anomalous behavior with several algorithms.
 
   The full implementation of all compared algorithms and the measurements
-  code can be found on Github: \missing{github repo}
+  code can be found on Github: \url{https://github.com/k-u-bux/rotate-paper}
   
 
   \pgfkeys{/pgf/number format/std=-2:4}%
