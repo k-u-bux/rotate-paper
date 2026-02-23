@@ -1,3 +1,87 @@
+rotate-short-lipics.pdf: rotate-short-lipics.bbl MakeTimings
+	pdflatex rotate-short-lipics
+
+rotate-short-lipics.bbl: rotate-short-lipics.aux rotate.bib
+	bibtex rotate-short-lipics
+
+rotate-short-lipics.aux: rotate-short-lipics.tex \
+cpu.info \
+cache.info \
+clang_timings_block_cycle_char.data \
+clang_timings_block_cycle_int32.data \
+clang_timings_block_cycle_int64.data \
+clang_timings_block_cycle_long_double.data \
+clang_timings_block_cycle_short.data \
+clang_timings_block_swap_char.data \
+clang_timings_block_swap_int32.data \
+clang_timings_block_swap_int64.data \
+clang_timings_block_swap_long_double.data \
+clang_timings_block_swap_short.data \
+clang_timings_buffering_trinity_char.data \
+clang_timings_buffering_trinity_int32.data \
+clang_timings_buffering_trinity_int64.data \
+clang_timings_buffering_trinity_long_double.data \
+clang_timings_buffering_trinity_short.data \
+clang_timings_buffering_triple_reverse_char.data \
+clang_timings_buffering_triple_reverse_int32.data \
+clang_timings_buffering_triple_reverse_int64.data \
+clang_timings_buffering_triple_reverse_long_double.data \
+clang_timings_buffering_triple_reverse_short.data \
+clang_timings_std_char.data \
+clang_timings_std_int32.data \
+clang_timings_std_int64.data \
+clang_timings_std_long_double.data \
+clang_timings_std_short.data \
+clang_timings_trinity_char.data \
+clang_timings_trinity_int32.data \
+clang_timings_trinity_int64.data \
+clang_timings_trinity_long_double.data \
+clang_timings_trinity_short.data \
+clang_timings_triple_reverse_char.data \
+clang_timings_triple_reverse_int32.data \
+clang_timings_triple_reverse_int64.data \
+clang_timings_triple_reverse_long_double.data \
+clang_timings_triple_reverse_short.data \
+gcc_timings_block_cycle_char.data \
+gcc_timings_block_cycle_int32.data \
+gcc_timings_block_cycle_int64.data \
+gcc_timings_block_cycle_long_double.data \
+gcc_timings_block_cycle_short.data \
+gcc_timings_block_swap_char.data \
+gcc_timings_block_swap_int32.data \
+gcc_timings_block_swap_int64.data \
+gcc_timings_block_swap_long_double.data \
+gcc_timings_block_swap_short.data \
+gcc_timings_buffering_trinity_char.data \
+gcc_timings_buffering_trinity_int32.data \
+gcc_timings_buffering_trinity_int64.data \
+gcc_timings_buffering_trinity_long_double.data \
+gcc_timings_buffering_trinity_short.data \
+gcc_timings_buffering_triple_reverse_char.data \
+gcc_timings_buffering_triple_reverse_int32.data \
+gcc_timings_buffering_triple_reverse_int64.data \
+gcc_timings_buffering_triple_reverse_long_double.data \
+gcc_timings_buffering_triple_reverse_short.data \
+gcc_timings_std_char.data \
+gcc_timings_std_int32.data \
+gcc_timings_std_int64.data \
+gcc_timings_std_long_double.data \
+gcc_timings_std_short.data \
+gcc_timings_trinity_char.data \
+gcc_timings_trinity_int32.data \
+gcc_timings_trinity_int64.data \
+gcc_timings_trinity_long_double.data \
+gcc_timings_trinity_short.data \
+gcc_timings_triple_reverse_char.data \
+gcc_timings_triple_reverse_int32.data \
+gcc_timings_triple_reverse_int64.data \
+gcc_timings_triple_reverse_long_double.data \
+gcc_timings_triple_reverse_short.data
+	pdflatex rotate-short-lipics.tex
+
+
+
+
 rotate.pdf: rotate.bbl MakeTimings
 	pdflatex rotate
 
