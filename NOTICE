@@ -1,0 +1,10 @@
+License
+-------
+The software source code in this repository (.nix, .sh, .cc files)
+is licensed  under the Apache License, Version 2.0. See the LICENSE
+file for details.
+
+The academic papers contained in this repository (all .tex files and 
+associated figures) are (C) 2026 by the authors, Valentin Blomer and 
+Kai-Uwe Bux. All rights reserved. 
+They are provided here for reference and reproducibility purposes only.
