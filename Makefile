@@ -1,3 +1,5 @@
+all: rotate.pdf rotate-short-lipics.pdf
+
 rotate-short-lipics.pdf: rotate-short-lipics.bbl MakeTimings
 	pdflatex rotate-short-lipics
 
